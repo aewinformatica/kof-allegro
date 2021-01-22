@@ -1,0 +1,39 @@
+# Project: ANIMACAO
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = ANIMACAO_private.res
+OBJ  = main.o Menu.o VsMenu.o $(RES)
+LINKOBJ  = main.o Menu.o VsMenu.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -mwindows -lalfont -DWINDOWS -lalpng -lalgif -lalleg -lgdi32 -luser32 -lwsock32 -laldmb -ldumb   
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = ANIMACAO.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ANIMACAO.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "ANIMACAO.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Menu.o: Menu.cpp
+	$(CPP) -c Menu.cpp -o Menu.o $(CXXFLAGS)
+
+VsMenu.o: VsMenu.cpp
+	$(CPP) -c VsMenu.cpp -o VsMenu.o $(CXXFLAGS)
+
+ANIMACAO_private.res: ANIMACAO_private.rc 
+	$(WINDRES) -i ANIMACAO_private.rc --input-format=rc -o ANIMACAO_private.res -O coff 

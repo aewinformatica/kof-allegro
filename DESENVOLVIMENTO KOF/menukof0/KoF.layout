@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout>
+	<Files>
+		<File Name="src\VsMenu.cpp" Top="Yes" Tabpos="1" TopLine="260">
+			<Cursor Line="304" Column="46"/>
+		</File>
+	</Files>
+	<Folders>
+		<Folder Name="include" Expanded="Yes"/>
+		<Folder Name="src" Expanded="Yes"/>
+	</Folders>
+</Layout>
